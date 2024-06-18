@@ -10,8 +10,7 @@ source:
   sha256: eb1da440e6250c5efc7637a0611a5b8888875ce6ac22bf7ff6b6769bbc958082
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 2
 
 requirements:
   build:
@@ -28,8 +27,8 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/sophus/types.hpp                # [unix]
-    - test -f ${PREFIX}/share/sophus/cmake/SophusTargets.cmake  # [unix]
+    - test -f ${PREFIX}/include/sophus/types.hpp
+    - test -f ${PREFIX}/share/sophus/cmake/SophusTargets.cmake
 
 about:
   home: https://github.com/strasdat/Sophus
