@@ -5,5 +5,5 @@ cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DBUILD_SOPHUS_TESTS=ON \
       ..
 make -j${CPU_COUNT}
-make test
+ctest --output-on-failure
 make install
