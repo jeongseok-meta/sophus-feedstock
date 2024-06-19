@@ -5,5 +5,7 @@ cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DBUILD_SOPHUS_TESTS=ON \
       ..
 make -j${CPU_COUNT}
-ctest --output-on-failure
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+  ctest --output-on-failure
+fi
 make install
