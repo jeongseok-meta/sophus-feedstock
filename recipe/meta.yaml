@@ -1,9 +1,10 @@
 {% set name = "Sophus" %}
-{% set version = "1!1.24.6" %}
+{% set version = "1.24.6" %}
+{% set version_with_epoch = "1!" ~ version %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version_with_epoch }}
 
 source:
   url: https://github.com/strasdat/{{ name }}/archive/{{ version }}.tar.gz
