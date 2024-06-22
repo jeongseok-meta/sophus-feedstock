@@ -1,13 +1,14 @@
 {% set name = "Sophus" %}
-{% set version = "22.10" %}
+{% set version = "1.24.6" %}
+{% set version_with_epoch = "1!" ~ version %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version_with_epoch }}
 
 source:
-  url: https://github.com/strasdat/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 270709b83696da179447cf743357e36a8b9bc8eed5ff4b9d66d33fe691010bad
+  url: https://github.com/strasdat/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 0f3e46a98817f9841634c5ed85eda8597340e9e4b85b3d9ceb587ac56028f33a
 
 build:
   number: 0
@@ -17,6 +18,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - cmake
     - make  # [not win]
   host:
